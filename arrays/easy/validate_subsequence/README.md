@@ -30,3 +30,21 @@ A subsequence of an array is a set of numbers that aren't necessarily adjacent i
 - The numbers in the sequence must appear in order but **do not** need to be adjacent.
 - The function should return a boolean: `True` if the sequence is valid, `False` otherwise.
 - You can assume the arrays contain only integers and are non-empty.
+
+## Solution Approaches
+
+### 1. Brute Force (Manual Matching with Subarrays)
+
+- **Time Complexity:** O(n²)
+- **Space Complexity:** O(n)
+- **Description:**  
+  Build a subarray manually from matches and compare it with the original sequence.
+
+---
+
+### 2. Optimized Pointer Scan
+
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(1)
+- **Description:**  
+  Move a start pointer through the array while scanning sequence elements efficiently.
