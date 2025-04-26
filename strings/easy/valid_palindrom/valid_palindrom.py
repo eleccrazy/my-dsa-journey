@@ -1,3 +1,13 @@
+"""
+File: valid_palindrom.py
+
+Description: Checks if a string is a valid palindrome after cleaning non-alphanumeric characters.
+
+Author: Gizachew Kassa
+Date: 26/04/2025
+"""
+
+
 def isPalindrome(self, s: str) -> bool:
     """
     Checks if the given string is a valid palindrome after removing
