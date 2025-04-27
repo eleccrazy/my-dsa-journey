@@ -49,16 +49,28 @@ n = 0
 
 ## Solution Overview
 
-The current solution appends elements from `nums2` into `nums1` at the appropriate positions,  
-then sorts the merged array to achieve the correct final ordering.
+This problem was solved using two approaches:
 
-This approach leverages Python's in-place `.sort()` method.
+1. **Simple Approach (Copy + Sort)**  
+   - Copy elements from `nums2` into `nums1` after the initial `m` elements.
+   - Sort the combined array using Python’s in-place `.sort()` method.
+   
+2. **Optimized Approach (Two Pointers, In-Place Merge)**  
+   - Start two pointers at the end of the valid parts of `nums1` and `nums2`.
+   - Compare elements from the back and place the larger one at the end of `nums1`.
+   - Move the pointers backward accordingly.
+   - If any elements remain in `nums2`, copy them into the beginning of `nums1`.
+
+Both approaches ensure that the final array is sorted and stored in `nums1` as required.
 
 ---
 
 ### Complexity Analysis
 
-- **Time Complexity:** O((m + n) log(m + n))  
-- **Space Complexity:** O(1) (in-place)
+- **Simple Approach (Copy + Sort):**
+  - **Time Complexity:** O((m + n) log(m + n))
+  - **Space Complexity:** O(1) (in-place)
 
-
+- **Optimized Approach (Two Pointers):**
+  - **Time Complexity:** O(m + n)
+  - **Space Complexity:** O(1) (in-place)
