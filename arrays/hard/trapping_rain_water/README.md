@@ -71,3 +71,28 @@ This method ensures that we account for the tallest boundaries on both sides bef
 
 - **Space Complexity:** O(n)  
   Two additional arrays of size `n` are used to store the left and right max heights.
+
+## Optimized Solution Overview
+
+This solution uses a **Two-Pointer Optimization Approach**:
+
+- Initialize two pointers, `left` at the beginning and `right` at the end of the array.
+- Keep track of `left_max` and `right_max` — the highest walls encountered so far from both ends.
+- At each step, determine which side has the lower height.
+  - If `height[left] < height[right]`, process from the left side:
+    - If `height[left] >= left_max`, update `left_max`
+    - Else, trap water by subtracting `height[left]` from `left_max`
+  - Else, process from the right side similarly.
+- Move the pointers inward until they meet.
+
+This greedy strategy ensures that trapped water is only calculated when both boundaries are known, without the need for extra space.
+
+---
+
+### Complexity Analysis for The Optimized Solution
+
+- **Time Complexity:** O(n)  
+  Each element is visited at most once as the two pointers converge.
+
+- **Space Complexity:** O(1)  
+  Only constant space is used for variables; no extra arrays are created.
