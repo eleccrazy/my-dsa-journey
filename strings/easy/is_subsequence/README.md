@@ -59,3 +59,23 @@ This approach maintains the relative order of characters and ensures each charac
 
 - **Space Complexity:** O(1)  
   Only a few variables are used; no extra data structures are created.
+## Solution Overview (Two-Pointer Approach)
+
+This solution uses a **Two-Pointer Technique**:
+
+- Initialize two pointers `i` and `j` at the start of strings `s` and `t`, respectively.
+- Move `j` through `t`, and advance `i` only when `s[i] == t[j]`.
+- If the `i` pointer reaches the end of `s`, it means all characters of `s` appeared in `t` in order.
+- Return `True` if all characters in `s` have been matched; otherwise, return `False`.
+
+This method improves performance by avoiding nested loops and ensures a linear scan through both strings.
+
+---
+
+### Complexity Analysis
+
+- **Time Complexity:** O(n + m)  
+  Where `n = len(s)` and `m = len(t)` — each character in both strings is visited at most once.
+
+- **Space Complexity:** O(1)  
+  Only constant extra space is used for two pointers.
