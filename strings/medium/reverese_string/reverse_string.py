@@ -19,4 +19,5 @@ def reverseWords(self, s: str) -> str:
     """
     string_list = s.split()
     string_list[:] = string_list[::-1]
+
     return " ".join(string_list)
