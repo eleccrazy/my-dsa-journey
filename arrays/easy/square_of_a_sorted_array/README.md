@@ -48,3 +48,22 @@ The squares of the numbers are `[49, 9, 4, 9, 121]`, which is sorted in non-decr
 
 Squaring each element and sorting the array is straightforward and gives an `O(n log n)` solution.  
 Can you solve this problem in **O(n)** time using a different approach?
+
+---
+## Solution Approach
+1. **Two Pointers Approach**: 
+   - Initialize two pointers, `left` at the start of the array and `right` at the end.
+   - Compare the absolute values of the elements at these pointers.
+   - Square the larger absolute value and place it in the result array from the end towards the start.
+   - Move the pointer of the larger absolute value inward.
+   - Continue until all elements are processed.
+2. **Result Array**:
+    - Initialize a result array of the same length as `nums`.
+    - Fill it with squares of the elements in sorted order.
+3. **Return the Result**:
+    - Return the result array.
+
+## Complexity Analysis
+- **Time Complexity**: `O(n)`, where `n` is the length of the input array `nums`. We traverse the array once.
+- **Space Complexity**: `O(n)`, for the result array. The input array is not modified.
+- **In-place**: The algorithm does not modify the input array, but it uses additional space for the result array.
