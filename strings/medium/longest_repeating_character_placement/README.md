@@ -46,3 +46,26 @@ The entire string can be replaced, so the length is 2.
 - `1 <= s.length <= 10⁵`
 - `s` consists of only **uppercase English letters (A–Z)`
 - `0 <= k <= s.length`
+
+---
+
+## Solution Overview
+
+This solution uses a **variable-size sliding window** strategy:
+
+- It maintains a window `[left, right]` and tracks the frequency of characters within that window.
+- The idea is to find the longest window where at most `k` characters can be replaced to make the entire window consist of the same character.
+- The most frequent character in the window (`max_freq`) determines how many characters need to be replaced:  
+  `window_size - max_freq <= k`
+- If the window becomes invalid, it is shrunk from the left.
+- The maximum valid window length is tracked and returned.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n)`  
+  Each character is processed at most twice — once when added and once when removed from the window.
+
+- **Space Complexity:** `O(1)`  
+  The character frequency map stores at most 26 keys (uppercase English letters).
