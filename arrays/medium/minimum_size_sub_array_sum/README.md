@@ -66,3 +66,25 @@ No subarray meets the target.
 Can you solve it in **O(n)** time using a sliding window?  
 Try to implement a second solution with **O(n log n)** time complexity using binary search.
 
+---
+
+## Solution Overview
+
+This solution uses a **variable-size sliding window** to efficiently track the sum of a subarray:
+
+- Two pointers `left` and `right` define the window.
+- Expand the window by moving `right` and adding to the running sum.
+- Once the sum is greater than or equal to `target`, shrink the window from the left while maintaining the constraint.
+- Keep track of the smallest valid window length seen during the traversal.
+
+This technique ensures we only traverse the array once, providing an efficient linear-time solution.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n)`  
+  Each element is added to and removed from the window at most once.
+
+- **Space Complexity:** `O(1)`  
+  Constant space is used for tracking sums and window bounds.
