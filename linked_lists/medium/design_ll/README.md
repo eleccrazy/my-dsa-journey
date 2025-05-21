@@ -58,3 +58,35 @@ Output
 - At most `2000` calls will be made to `get`, `addAtHead`, `addAtTail`, `addAtIndex`, and `deleteAtIndex`.
 - You **may not use built-in linked list libraries**.
 
+## Solution Overview
+
+This implementation uses a **singly linked list** data structure with basic node manipulation operations. Each node contains:
+- `value`: the integer value of the node
+- `next`: a reference to the next node in the list
+
+The `MyLinkedList` class supports the following operations:
+
+- **get(index)**: Traverses from the head to the given index and returns the node's value if valid, otherwise returns `-1`.
+- **addAtHead(val)**: Inserts a new node at the beginning of the list and updates the head.
+- **addAtTail(val)**: Traverses to the end of the list and appends the new node.
+- **addAtIndex(index, val)**: Traverses to the node just before the given index and inserts the new node. Handles edge cases like insertion at head, tail, and invalid index.
+- **deleteAtIndex(index)**: Removes the node at the specified index by adjusting the previous node's `next` pointer. Handles head deletion and invalid indices.
+
+An internal `size` counter is maintained to validate indices in constant time.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:**
+  - `get(index)`: O(n)
+  - `addAtHead(val)`: O(1)
+  - `addAtTail(val)`: O(n)
+  - `addAtIndex(index, val)`: O(n)
+  - `deleteAtIndex(index)`: O(n)
+
+  > Most operations involve traversing the list to find the correct node, resulting in linear time in the worst case.
+
+- **Space Complexity:** O(n)
+    - The space complexity is O(n) due to the storage of nodes in the linked list.
+    - The implementation uses a constant amount of extra space for pointers and counters.
