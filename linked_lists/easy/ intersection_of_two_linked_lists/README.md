@@ -60,3 +60,23 @@ Output: No intersection
 
 Could you write a solution that runs in `O(n)` time and uses only `O(1)` memory?
 
+## Solution Overview
+
+This solution uses a **Hash Set to Detect Intersections**:
+
+1. Traverse the first linked list (`headA`) and store each node's reference in a set.
+2. Traverse the second linked list (`headB`) and check whether any node is already in the set.
+3. If a node from `headB` exists in the set, it means both lists intersect at that node — return it.
+4. If no intersection is found, return `None`.
+
+This approach relies on the fact that reference equality (`is`) determines node equality, which matches the problem requirements.
+
+This solution does **not** mutate the input lists and guarantees correctness when node values may be duplicated.
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n + m)`  
+  - Where `n` is the number of nodes in `headA` and `m` in `headB`.
+
+- **Space Complexity:** `O(n)`  
+  - Due to storing all nodes of `headA` in a hash set.
