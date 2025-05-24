@@ -88,5 +88,3 @@ An internal `size` counter is maintained to validate indices in constant time.
   > Most operations involve traversing the list to find the correct node, resulting in linear time in the worst case.
 
 - **Space Complexity:** O(n)
-    - The space complexity is O(n) due to the storage of nodes in the linked list.
-    - The implementation uses a constant amount of extra space for pointers and counters.
