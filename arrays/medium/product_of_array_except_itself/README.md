@@ -38,3 +38,36 @@ Output: `[0, 0]`
 
 Can you solve the problem in `O(1)` extra space complexity?  
 (Note: the output array **does not** count as extra space.)
+
+## Solution Overview
+
+This solution computes the product of all elements in the array except the current one by using **prefix and postfix product arrays**.
+
+### Steps:
+1. **Prefix Product Pass**  
+   Build a prefix array where `prefix[i]` is the product of all elements from the start of the array up to index `i`.
+
+2. **Postfix Product Pass**  
+   Build a postfix array where `postfix[i]` is the product of all elements from index `i` to the end of the array.
+
+3. **Final Output Computation**  
+   For each index `i` in the input array:
+   - If `i == 0`: result is `postfix[1]`  
+   - If `i == n - 1`: result is `prefix[n - 2]`  
+   - Else: result is `prefix[i - 1] * postfix[i + 1]`
+
+This method avoids using division and works efficiently in three linear passes.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n)`  
+  - One pass to compute prefix products  
+  - One pass to compute postfix products  
+  - One pass to build the result array
+
+- **Space Complexity:** `O(n)`  
+  - Additional space for prefix and postfix arrays  
+  - The output array is not counted toward extra space per the problem statement
+
