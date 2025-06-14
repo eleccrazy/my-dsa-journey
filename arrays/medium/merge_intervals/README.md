@@ -36,3 +36,24 @@ The intervals `[1, 4]` and `[4, 5]` overlap at the endpoint `4`, so they are mer
 - `intervals[i].length == 2`
 - `0 <= starti <= endi <= 10⁴`
 
+
+## Solution Overview
+
+To merge overlapping intervals, the input list is first **sorted by start time**.  
+Then, we iterate through the sorted intervals and:
+
+- Track the current range using `curr_start` and `curr_end`.
+- If the next interval starts before or at `curr_end`, we merge them by extending the end.
+- Otherwise, we add the current range to the result and move to the next.
+
+This greedy approach ensures we always merge overlapping intervals in a single pass.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n log n)`
+  - Sorting the intervals dominates the runtime.
+
+- **Space Complexity:** `O(n)`
+  - The result list can grow to the size of the input if no intervals overlap.
