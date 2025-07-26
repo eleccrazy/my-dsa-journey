@@ -47,4 +47,12 @@ Solve Climbing Stairs using top-down recursion with memoization
 - **Space Complexity:** `O(n)`  
   Due to the memoization table and recursive call stack.
 
+## Optimized Bottom-Up Solution
+
+This version uses bottom-up dynamic programming with constant space.
+
+- Start from base cases `f(1) = 1` and `f(2) = 2`
+- Instead of building a full DP table, keep only the last two values
+- Iterate from step 3 to n, updating the previous results
+- Avoids recursion and stack overhead, with `O(1)` space usage
 
