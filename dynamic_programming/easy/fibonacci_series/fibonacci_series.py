@@ -1,6 +1,6 @@
 """
 File: fibonacci_series.py
-Description: This module generates Fibonacci numbers using both iterative and recursive methods.
+Description: This module generates Fibonacci numbers using dynamic programming.
 Author: Gizachew Kassa
 Date: 24-07-2025
 """
